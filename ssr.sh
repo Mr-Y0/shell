@@ -32,7 +32,7 @@ Tip="${Green_font_prefix}[注意]${Font_color_suffix}"
 Separator_1="——————————————————————————————"
 
 check_root(){
-	[[ $EUID != 0 ]] && echo -e "${Error} 当前账号非ROOT(或没有ROOT权限)无法继续操作，请使用${Green_background_prefix} sudo su ${Font_color_suffix}来获取临时ROOT权限（执行后会提示输入当前账号的密码）。" && exit 1
+	[[ $EUID != 0 ]] && echo -e "${Error} 当前账号非ROOT(或没有ROOT权限)，无法继续操作，请使用${Green_background_prefix} sudo su ${Font_color_suffix}来获取临时ROOT权限（执行后会提示输入当前账号的密码）。" && exit 1
 }
 check_sys(){
 	if [[ -f /etc/redhat-release ]]; then
@@ -1518,4 +1518,4 @@ case "$num" in
 	*)
 	echo -e "${Error} 请输入正确的数字 [1-15]"
 	;;
-esac
+esac 
